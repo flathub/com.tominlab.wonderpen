@@ -8,14 +8,11 @@ separate-locales: false
 rename-icon: wonderpen
 rename-desktop-file: wonderpen.desktop
 command: wonderpen
-
 finish-args:
   - --share=ipc
   - --socket=x11
   - --device=dri
   - --share=network
-
-
 modules:
   - name: wonderpen
     buildsystem: simple
@@ -27,6 +24,8 @@ modules:
       - cp -a opt/WonderPen $FLATPAK_DEST/
       - cp -a usr/share $FLATPAK_DEST/
       - desktop-file-edit --set-key="Exec" --set-value="wonderpen %U" $FLATPAK_DEST/share/applications/wonderpen.desktop
+      - desktop-file-edit --set-key="Name[zh_CN]" --set-value="妙笔" $FLATPAK_DEST/share/applications/wonderpen.desktop
+      - desktop-file-edit --set-key="Name[zh_TW]" --set-value="妙筆" $FLATPAK_DEST/share/applications/wonderpen.desktop
       - install -Dm644 com.tominlab.wonderpen.metainfo.xml -t /app/share/metainfo
       - install -Dm755 wonderpen.sh /app/bin/wonderpen
     sources:
