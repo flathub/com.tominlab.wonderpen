@@ -39,7 +39,7 @@ modules:
           type: json
           url: https://app.tominlab.com/api/product/wonderpen/downloads/latest
           version-query: .data[0] | .version
-          url-query: .data[] | select(.format=="linux_deb") | select(.url | contains("arm64")) | "https://file.tominlab.com/" + .url
+          url-query: .data[] | select(.format=="linux_deb" and (.url | contains("arm64"))) | "https://file.tominlab.com/" + .url
       - type: file
         dest-filename: wonderpen.deb
         only-arches:
@@ -50,7 +50,7 @@ modules:
           type: json
           url: https://app.tominlab.com/api/product/wonderpen/downloads/latest
           version-query: .data[0] | .version
-          url-query: .data[] | select(.format=="linux_deb") | select(.url | contains("amd64")) | "https://file.tominlab.com/" + .url
+          url-query: .data[] | select(.format=="linux_deb" and (.url | contains("amd64"))) | "https://file.tominlab.com/" + .url
       - type: file
         path: com.tominlab.wonderpen.metainfo.xml
       - type: script
