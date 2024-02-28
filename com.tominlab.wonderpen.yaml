@@ -33,24 +33,26 @@ modules:
         dest-filename: wonderpen.deb
         only-arches:
           - aarch64
-        url: https://file.tominlab.com/WonderPen/2.4/WonderPen_linux_arm64_2.4.3(7284).deb
-        sha256: 7fcb5b93a43fc7025a0ea1838a8889a33371996c2f330eb5d37714dcb27fc159
+        url: https://file.tominlab.com/WonderPen/2.4/WonderPen_linux_arm64_2.4.4(7328).deb
+        sha256: 82020ab195b2fa1e156e1b75c8d475b1ca2d9faa1aca496ca6a44f7697f23a70
         x-checker-data:
           type: json
           url: https://app.tominlab.com/api/product/wonderpen/downloads/latest
           version-query: .data[0] | .version
-          url-query: .data[] | select(.format=="linux_deb" and (.url | contains("arm64"))) | "https://file.tominlab.com/" + .url
+          url-query: .data[] | select(.format=="linux_deb" and (.url | contains("arm64")))
+            | "https://file.tominlab.com/" + .url
       - type: file
         dest-filename: wonderpen.deb
         only-arches:
           - x86_64
-        url: https://file.tominlab.com/WonderPen/2.4/WonderPen_linux_amd64_2.4.3(7284).deb
-        sha256: 2f93b47a2f61150666608861730713431596388e5a01a1e8597d9ac218604952
+        url: https://file.tominlab.com/WonderPen/2.4/WonderPen_linux_amd64_2.4.4(7328).deb
+        sha256: 6895865805ba3ae28c4f258a309e7e677b80a6c63d9c12ccd41ee792ec900cea
         x-checker-data:
           type: json
           url: https://app.tominlab.com/api/product/wonderpen/downloads/latest
           version-query: .data[0] | .version
-          url-query: .data[] | select(.format=="linux_deb" and (.url | contains("amd64"))) | "https://file.tominlab.com/" + .url
+          url-query: .data[] | select(.format=="linux_deb" and (.url | contains("amd64")))
+            | "https://file.tominlab.com/" + .url
       - type: file
         path: com.tominlab.wonderpen.metainfo.xml
       - type: script
