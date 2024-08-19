@@ -33,8 +33,8 @@ modules:
         dest-filename: wonderpen.deb
         only-arches:
           - aarch64
-        url: https://file.tominlab.com/WonderPen/2.5/WonderPen_linux_arm64_2.5.1(7414).deb
-        sha256: 2924956a3c317693b1f7fbddfc129b7de9dbca8b9bd8ee287e687f5c22b04c76
+        url: https://file.tominlab.com/WonderPen/beta/WonderPen_linux_arm64_2.5.3-beta.7424(7424).deb
+        sha256: 22c0001e5e04c1e4ae1d2a1dcd8254dab7815633e10b1df561e8805902c36568
         x-checker-data:
           type: json
           url: https://app.tominlab.com/api/product/wonderpen/downloads/latest
