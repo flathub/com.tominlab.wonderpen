@@ -1,9 +1,9 @@
 app-id: com.tominlab.wonderpen
 runtime: org.freedesktop.Platform
-runtime-version: '24.08'
+runtime-version: "24.08"
 sdk: org.freedesktop.Sdk
 base: org.electronjs.Electron2.BaseApp
-base-version: '24.08'
+base-version: "24.08"
 separate-locales: false
 rename-icon: wonderpen
 rename-desktop-file: wonderpen.desktop
@@ -32,27 +32,15 @@ modules:
       - type: file
         dest-filename: wonderpen.deb
         only-arches:
-          - aarch64
-        url: https://file.tominlab.com/WonderPen/beta/WonderPen_linux_arm64_2.5.3-beta.7424(7424).deb
-        sha256: 22c0001e5e04c1e4ae1d2a1dcd8254dab7815633e10b1df561e8805902c36568
-        x-checker-data:
-          type: json
-          url: https://app.tominlab.com/api/product/wonderpen/downloads/latest
-          version-query: .data[0] | .version
-          url-query: .data[] | select(.format=="linux_deb" and (.url | contains("arm64")))
-            | "https://file.tominlab.com/" + .url
-      - type: file
-        dest-filename: wonderpen.deb
-        only-arches:
           - x86_64
         url: https://file.tominlab.com/WonderPen/2.5/WonderPen_linux_amd64_2.5.5(7492).deb
         sha256: a585b65245f548ae21b35ecbdb51bac8d0a512e57a89bbaf0210a946fa6ac999
-        is-main-source: true
         x-checker-data:
           type: json
           url: https://app.tominlab.com/api/product/wonderpen/downloads/latest
           version-query: .data[0] | .version
-          url-query: .data[] | select(.format=="linux_deb" and (.url | contains("amd64")))
+          url-query:
+            .data[] | select(.format=="linux_deb" and (.url | contains("amd64")))
             | "https://file.tominlab.com/" + .url
       - type: file
         path: com.tominlab.wonderpen.metainfo.xml
@@ -61,3 +49,16 @@ modules:
         commands:
           - export TMPDIR=$XDG_RUNTIME_DIR/app/$FLATPAK_ID
           - exec zypak-wrapper.sh /app/WonderPen/wonderpen "$@"
+
+      # - type: file
+      #   dest-filename: wonderpen.deb
+      #   only-arches:
+      #     - aarch64
+      #   url: https://file.tominlab.com/WonderPen/beta/WonderPen_linux_arm64_2.5.3-beta.7424(7424).deb
+      #   sha256: 22c0001e5e04c1e4ae1d2a1dcd8254dab7815633e10b1df561e8805902c36568
+      #   x-checker-data:
+      #     type: json
+      #     url: https://app.tominlab.com/api/product/wonderpen/downloads/latest
+      #     version-query: .data[0] | .version
+      #     url-query: .data[] | select(.format=="linux_deb" and (.url | contains("arm64")))
+      #       | "https://file.tominlab.com/" + .url
