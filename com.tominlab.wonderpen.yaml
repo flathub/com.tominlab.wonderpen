@@ -1,9 +1,9 @@
 app-id: com.tominlab.wonderpen
 runtime: org.freedesktop.Platform
-runtime-version: '23.08'
+runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 base: org.electronjs.Electron2.BaseApp
-base-version: '23.08'
+base-version: '24.08'
 separate-locales: false
 rename-icon: wonderpen
 rename-desktop-file: wonderpen.desktop
@@ -47,6 +47,7 @@ modules:
           - x86_64
         url: https://file.tominlab.com/WonderPen/2.5/WonderPen_linux_amd64_2.5.5(7492).deb
         sha256: a585b65245f548ae21b35ecbdb51bac8d0a512e57a89bbaf0210a946fa6ac999
+        is-main-source: true
         x-checker-data:
           type: json
           url: https://app.tominlab.com/api/product/wonderpen/downloads/latest
