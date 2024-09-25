@@ -1,9 +1,9 @@
 app-id: com.tominlab.wonderpen
 runtime: org.freedesktop.Platform
-runtime-version: "24.08"
+runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 base: org.electronjs.Electron2.BaseApp
-base-version: "24.08"
+base-version: '24.08'
 separate-locales: false
 rename-icon: wonderpen
 rename-desktop-file: wonderpen.desktop
@@ -33,14 +33,13 @@ modules:
         dest-filename: wonderpen.deb
         only-arches:
           - x86_64
-        url: https://file.tominlab.com/WonderPen/2.5/WonderPen_linux_amd64_2.5.5(7492).deb
-        sha256: a585b65245f548ae21b35ecbdb51bac8d0a512e57a89bbaf0210a946fa6ac999
+        url: https://file.tominlab.com/WonderPen/2.5/WonderPen_linux_amd64_2.5.6(7500).deb
+        sha256: 4b16bd78260205dfc382dda3147f621793e612dce76f5c657382089ca87ee485
         x-checker-data:
           type: json
           url: https://app.tominlab.com/api/product/wonderpen/downloads/latest
           version-query: .data[0] | .version
-          url-query:
-            .data[] | select(.format=="linux_deb" and (.url | contains("amd64")))
+          url-query: .data[] | select(.format=="linux_deb" and (.url | contains("amd64")))
             | "https://file.tominlab.com/" + .url
       - type: file
         path: com.tominlab.wonderpen.metainfo.xml
@@ -60,6 +59,5 @@ modules:
           type: json
           url: https://app.tominlab.com/api/product/wonderpen/downloads/latest
           version-query: .data[0] | .version
-          url-query:
-            .data[] | select(.format=="linux_deb" and (.url | contains("arm64")))
+          url-query: .data[] | select(.format=="linux_deb" and (.url | contains("arm64")))
             | "https://file.tominlab.com/" + .url
