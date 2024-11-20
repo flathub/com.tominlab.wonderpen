@@ -13,6 +13,8 @@ finish-args:
   - --socket=x11
   - --device=dri
   - --share=network
+  # required to fix cursor scaling on wayland
+  - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons
 modules:
   - name: wonderpen
     buildsystem: simple
@@ -33,8 +35,8 @@ modules:
         dest-filename: wonderpen.deb
         only-arches:
           - x86_64
-        url: https://file.tominlab.com/WonderPen/2.5/WonderPen_linux_amd64_2.5.7(7536).deb
-        sha256: c956d4d0640b6624b1c36c4d7a556ef9db2b5013e0db93bdebb4f102787f6ea2
+        url: https://file.tominlab.com/WonderPen/2.5/WonderPen_linux_amd64_2.5.8(7566).deb
+        sha256: d776212650f30dafcf942fbee54b883133c09d06c7ac870c0f44a207b1a9dbbe
         x-checker-data:
           type: json
           url: https://app.tominlab.com/api/product/wonderpen/downloads/latest
@@ -47,7 +49,13 @@ modules:
         dest-filename: wonderpen.sh
         commands:
           - export TMPDIR=$XDG_RUNTIME_DIR/app/$FLATPAK_ID
-          - exec zypak-wrapper.sh /app/WonderPen/wonderpen "$@"
+          - WAYLAND_SOCKET=${WAYLAND_DISPLAY:-"wayland-0"}
+          - |
+            if [[ -e "$XDG_RUNTIME_DIR/${WAYLAND_SOCKET}" || -e "${WAYLAND_DISPLAY}" ]]
+            then
+                FLAGS="--enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime"
+            fi
+          - exec zypak-wrapper.sh /app/WonderPen/wonderpen $FLAGS "$@"
 
       - type: file
         dest-filename: wonderpen.deb
