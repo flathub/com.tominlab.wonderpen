@@ -4,14 +4,16 @@
   <launchable type="desktop-id">com.tominlab.wonderpen.desktop</launchable>
   <name>WonderPen</name>
   <name xml:lang="zh_CN">妙笔</name>
-  <developer_name>TominLab</developer_name>
+  <developer id="com.tominlab">
+    <name>TominLab</name>
+  </developer>
   <summary>Write novels and essays</summary>
   <summary xml:lang="zh_CN">强大易用的写作软件</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LicenseRef-proprietary=https://www.tominlab.com/en/terms/service</project_license>
   <url type="homepage">https://www.tominlab.com/en/wonderpen</url>
   <url type="contact">https://www.tominlab.com/en/contact</url>
-  <url type="faq">https://help.tominlab.com/en/wonderpen/guides</url>
+  <url type="faq">https://docs.wonderpen.app/en/</url>
   <description>
     <p>Note: If you want to place the library in a different path, please grant access to the relevant folder through flatseal or other tools.</p>
     <p xml:lang="zh_CN">注意：如果你要将库放在不同的路径，请通过 flatseal 或其他工具给予相关文件夹访问权限。</p>
