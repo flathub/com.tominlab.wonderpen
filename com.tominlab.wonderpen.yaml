@@ -36,13 +36,15 @@ modules:
         dest-filename: wonderpen.deb
         only-arches:
           - x86_64
-        url: https://file.tominlab.com/WonderPen/2.6/WonderPen_linux_amd64_2.6.1(7712).deb
-        sha256: 2813799142de36e9449cd179e1eb797e48eef7c0f45e31b59bd8b3ec61d8a756
+        url: https://file.tominlab.com/WonderPen/2.6/WonderPen_linux_amd64_2.6.3(7726).deb
+        sha256: 3d6659174da66165b3f5151a19bc1d808228a566d5bd310a9a906b221b5982d7
         x-checker-data:
           type: json
           url: https://app.tominlab.com/api/product/wonderpen/downloads/latest
           version-query: .data[0] | .version
-          url-query: .data[] | select(.format=="linux_deb" and (.url | contains("amd64")) and (.url | contains("beta") | not)) | "https://file.tominlab.com/" + .url
+          url-query: .data[] | select(.format=="linux_deb" and (.url | contains("amd64"))
+            and (.url | contains("beta") | not)) | "https://file.tominlab.com/" +
+            .url
       - type: file
         path: com.tominlab.wonderpen.metainfo.xml
       - type: script
@@ -61,10 +63,12 @@ modules:
         dest-filename: wonderpen.deb
         only-arches:
           - aarch64
-        url: https://file.tominlab.com/WonderPen/2.6/WonderPen_linux_arm64_2.6.1(7712).deb
-        sha256: c6541531777c7789a9e591c484b02a90e1345cd37ad6d0cbd069f458c4ca4b96
+        url: https://file.tominlab.com/WonderPen/2.6/WonderPen_linux_arm64_2.6.3(7726).deb
+        sha256: 77b1b0dc3e1131fbdc738d56ab0613519b72b617e7d8d711007b6aa61359cbca
         x-checker-data:
           type: json
           url: https://app.tominlab.com/api/product/wonderpen/downloads/latest
           version-query: .data[0] | .version
-          url-query: .data[] | select(.format=="linux_deb" and (.url | contains("arm64")) and (.url | contains("beta") | not)) | "https://file.tominlab.com/" + .url
+          url-query: .data[] | select(.format=="linux_deb" and (.url | contains("arm64"))
+            and (.url | contains("beta") | not)) | "https://file.tominlab.com/" +
+            .url
