@@ -42,8 +42,7 @@ modules:
           type: json
           url: https://app.tominlab.com/api/product/wonderpen/downloads/latest
           version-query: .data[0] | .version
-          url-query: .data[] | select(.format=="linux_deb" and (.url | contains("amd64")))
-            | "https://file.tominlab.com/" + .url
+          url-query: .data[] | select(.format=="linux_deb" and (.url | contains("amd64")) and (.url | contains("beta") | not)) | "https://file.tominlab.com/" + .url
       - type: file
         path: com.tominlab.wonderpen.metainfo.xml
       - type: script
@@ -68,5 +67,4 @@ modules:
           type: json
           url: https://app.tominlab.com/api/product/wonderpen/downloads/latest
           version-query: .data[0] | .version
-          url-query: .data[] | select(.format=="linux_deb" and (.url | contains("arm64")))
-            | "https://file.tominlab.com/" + .url
+          url-query: .data[] | select(.format=="linux_deb" and (.url | contains("arm64")) and (.url | contains("beta") | not)) | "https://file.tominlab.com/" + .url
