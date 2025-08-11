@@ -10,13 +10,11 @@ rename-desktop-file: wonderpen.desktop
 command: wonderpen
 finish-args:
   - --share=ipc
-  - --socket=wayland
-  - --socket=fallback-x11
+  - --socket=x11
   - --device=dri
   - --share=network
   # required to fix cursor scaling on wayland
   - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons
-  - --env=ELECTRON_OZONE_PLATFORM_HINT=auto
 modules:
   - name: wonderpen
     buildsystem: simple
@@ -56,7 +54,7 @@ modules:
           - |
             if [[ -e "$XDG_RUNTIME_DIR/${WAYLAND_SOCKET}" || -e "${WAYLAND_DISPLAY}" ]]
             then
-                FLAGS="--enable-wayland-ime --wayland-text-input-version=3"
+                FLAGS="--enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime --wayland-text-input-version=3"
             fi
           - exec zypak-wrapper.sh /app/WonderPen/wonderpen $FLAGS "$@"
 
