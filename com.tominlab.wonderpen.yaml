@@ -10,8 +10,7 @@ rename-desktop-file: WonderPen.desktop
 command: WonderPen
 finish-args:
   - --share=ipc
-  - --socket=wayland
-  - --socket=fallback-x11
+  - --socket=x11
   - --device=dri
   - --share=network
   # required to fix cursor scaling on wayland
