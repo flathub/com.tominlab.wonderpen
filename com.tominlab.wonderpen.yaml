@@ -35,8 +35,8 @@ modules:
         dest-filename: WonderPen.deb
         only-arches:
           - x86_64
-        url: https://file.tominlab.com/WonderPen/desktop/3.0/WonderPen_linux_amd64_3.0.5(8206).deb
-        sha256: e5cb26e40a75794c2f6fb6669e8a69bdf360205df2a01bcfcd21187c15e3aeb4
+        url: https://file.tominlab.com/WonderPen/desktop/3.0/WonderPen_linux_amd64_3.0.6(8242).deb
+        sha256: 51b96147b9284b02c263ee2c1bb959f051959bb24b92263e5ad8022e07f7d80f
         x-checker-data:
           type: json
           url: https://app.tominlab.com/api/product/wonderpen/downloads/latest
@@ -62,8 +62,8 @@ modules:
         dest-filename: WonderPen.deb
         only-arches:
           - aarch64
-        url: https://file.tominlab.com/WonderPen/desktop/3.0/WonderPen_linux_arm64_3.0.5(8206).deb
-        sha256: ae7eba8cf5c1cc92065bf0500fece9f58bd4e1893d228c55d39c1951c08594be
+        url: https://file.tominlab.com/WonderPen/desktop/3.0/WonderPen_linux_arm64_3.0.6(8242).deb
+        sha256: f3cbc8562a0c7134e87b52cfaf6755a3e5145fe07f0642b9b17173be1cf307cc
         x-checker-data:
           type: json
           url: https://app.tominlab.com/api/product/wonderpen/downloads/latest
