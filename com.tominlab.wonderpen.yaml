@@ -1,9 +1,9 @@
 app-id: com.tominlab.wonderpen
 runtime: org.freedesktop.Platform
-runtime-version: '25.08'
+runtime-version: '26.08'
 sdk: org.freedesktop.Sdk
 base: org.electronjs.Electron2.BaseApp
-base-version: '25.08'
+base-version: '26.08'
 separate-locales: false
 rename-icon: WonderPen
 rename-desktop-file: WonderPen.desktop
@@ -36,8 +36,8 @@ modules:
         dest-filename: WonderPen.deb
         only-arches:
           - x86_64
-        url: https://file.tominlab.com/WonderPen/desktop/3.3/WonderPen-v3.3.0.8491-linux-amd64.deb
-        sha256: b68c2465f3eeb9be1bf893fe347596932af5a86032235300dea3bc42497b222e
+        url: https://file.tominlab.com/WonderPen/desktop/3.4/WonderPen-v3.4.0.8500-linux-amd64.deb
+        sha256: 47e8be5eade21e4122c198e2c3a70abb837bd0d4b41c177bca7215f43f23f38f
         x-checker-data:
           type: json
           url: https://app.tominlab.com/api/product/wonderpen/downloads/latest
@@ -63,8 +63,8 @@ modules:
         dest-filename: WonderPen.deb
         only-arches:
           - aarch64
-        url: https://file.tominlab.com/WonderPen/desktop/3.3/WonderPen-v3.3.0.8491-linux-arm64.deb
-        sha256: 40b4ead1c734a2b8ea50558566a1380324f9e19c1f0ac2a6bf05d62c1a9fc1e2
+        url: https://file.tominlab.com/WonderPen/desktop/3.4/WonderPen-v3.4.0.8500-linux-arm64.deb
+        sha256: 4f90a81c42c460b304e098660baf0d401e2e4c8ed3e0b4fb03a3d99d9fd1866f
         x-checker-data:
           type: json
           url: https://app.tominlab.com/api/product/wonderpen/downloads/latest
